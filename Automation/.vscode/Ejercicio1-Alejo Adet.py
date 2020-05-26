@@ -1,0 +1,28 @@
+#Ingresar el nombre y apellido de un alumno y sus notas de matemática, literatura y física.
+#Se pide imprimir el nombre, el apellido y el promedio.
+#Si el promedio es mayor a 6 entonces debe aparecer un cartel que diga "Aprobado".
+#Caso contrario, si tiene menos de 4 puntos imprimir "Insuficiente"
+#Y si tiene entre 4 y 5.99999 imprimir "A recuperatorio".
+#En caso de tener 9 puntos o más, imprimir (aparte del aprobado) "Alumno destacado".
+
+def promedio_alumno(mat,lit,fis):
+    return (mat+lit+fis)/3
+
+nombre = (input('Ingrese su Nombre y Apellido: '))
+mat = int(input('Ingrese su nota de Matemáticas: '))
+lit = int(input('Ingrese su nota de Literatura: '))
+fis = int(input('Ingrese su nota de Física: '))
+
+print('El alumno '+nombre+' tiene un promedio de: '+str(promedio_alumno(mat,lit,fis)))
+
+promedio = (promedio_alumno(mat,lit,fis))
+
+if promedio > 6: 
+    print('Aprobado')
+    if promedio >= 9:
+        print('Alumno destacado.')
+elif    4 <= promedio <= 5.99999:
+        print('A recuperatorio')
+else:
+    print('Insuficiente')
+
